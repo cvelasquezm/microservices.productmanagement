@@ -1,6 +1,12 @@
 pipeline {
     agent any
+    environment{
+        URL_REPOSITORY = 'https://github.com/cvelasquezm/microservices.productmanagement.git'
+    }
     stages {
+        stage('Git Pull'){
+            checkout(${URL_REPOSITORY})
+        }
         stage('Stage parallel'){
             parallel{
                 stage('stage parallel 1') {
