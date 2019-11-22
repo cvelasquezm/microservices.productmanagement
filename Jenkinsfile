@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Git Pull'){
             steps {
-                checkout($URL_REPOSITORY)
+                checkout scm
             }
         }
         stage('Stage parallel'){
