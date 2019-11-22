@@ -21,7 +21,7 @@ pipeline {
         }
         stage('Deploy'){
             steps{
-                bat 'mvn clean deploy'
+                bat 'mvnw clean deploy'
             }
         }
         stage('Stage parallel'){
