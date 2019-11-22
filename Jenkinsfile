@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Git Pull'){
             steps {
-                checkout(${URL_REPOSITORY})
+                checkout($URL_REPOSITORY)
             }
         }
         stage('Stage parallel'){
