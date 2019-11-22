@@ -16,12 +16,12 @@ pipeline {
         }        
         stage('Test'){
             steps{
-                bat 'mvn clean install'
+                bat 'mvn test'
             }
         }
         stage('Deploy'){
             steps{
-                bat 'mvn spring-boot:run'
+                bat 'mvn install'
             }
         }
         stage('Stage parallel'){
