@@ -19,6 +19,11 @@ pipeline {
                 bat 'mvn clean install'
             }
         }
+        stage('Deploy'){
+            steps{
+                bat 'mvn clean spring-boot:run'
+            }
+        }
         stage('Stage parallel'){
             parallel{
                 stage('stage parallel 1') {
