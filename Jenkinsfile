@@ -6,7 +6,18 @@ pipeline {
     stages {
         stage('Git Pull'){
             steps {
+                git url: 'https://github.com/cvelasquezm/microservices.productmanagement.git'
                 checkout scm
+            }
+        }
+        stage('Build'){
+            steps{
+                sh 'mvn clean compile'
+            }
+        }        
+        stage('Test'){
+            steps{
+                sh 'mvn clean install'
             }
         }
         stage('Stage parallel'){
