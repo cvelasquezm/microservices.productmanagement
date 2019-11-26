@@ -31,7 +31,7 @@ pipeline {
             }
         }
         stage('Deploy Docker'){
-            steps{
+            //steps{
                 try{
                     bat 'mvn antrun:run@docker-run'
                     echo 'SUCCESS'
@@ -39,7 +39,7 @@ pipeline {
                     echo 'ERROR'
                 }
 
-            }
+            //}
         }
 
         /*stage('Stage parallel'){
