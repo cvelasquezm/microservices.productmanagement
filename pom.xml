@@ -98,6 +98,7 @@
 								<target>
 									<exec executable="docker">
 										<arg value="run"/>
+										<arg value="--name productManagement_API"/>
 										<arg value="cvelasquezm/${project.artifactId}:${project.version}"/>
 									</exec>
 								</target>
