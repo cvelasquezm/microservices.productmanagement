@@ -19,7 +19,7 @@ pipeline {
                 bat 'mvn test'
             }
         }
-        stage('Deploy'){
+        stage('Build Image'){
             steps{
                 bat 'mvn install'
             }
