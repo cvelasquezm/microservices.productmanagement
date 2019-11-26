@@ -21,9 +21,21 @@ pipeline {
         }
         stage('Build Image'){
             steps{
-                bat 'mvn install'
+                bat 'mvn dockerfile:build'
             }
         }
+
+        stage('Push Image'){
+            steps{
+                bat 'mvn dockerfile:push'
+            }
+        }
+        stage('Deploy Docker'){
+            steps{
+                bat 'mvn antrun:run@docker-run'
+            }
+        }
+
         stage('Stage parallel'){
             parallel{
                 stage('stage parallel 1') {
