@@ -31,15 +31,9 @@ pipeline {
             }
         }
         stage('Deploy Docker'){
-            //steps{
-                try{
-                    bat 'mvn antrun:run@docker-run'
-                    echo 'SUCCESS'
-                }catch(err){
-                    echo 'ERROR'
-                }
-
-            //}
+            steps{
+               bat 'docker run --name productManagement_API cvelasquezm/productmanagement:0.0.1-SNAPSHOT'//'mvn antrun:run@docker-run'
+            }
         }
 
         /*stage('Stage parallel'){
